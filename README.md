@@ -87,7 +87,7 @@ Proponer una solución que permita:
 Atención equipos!! El cliente ha ampliado lo que quiere ver en cada proyecto.
 
 ### Búsqueda de películas
-  Incluir una barra de búsqueda en la barra de navegación, para que los usuarios puedan buscar por títulos.
+  Incluir una página de búsqueda, para que los usuarios puedan buscar por títulos.
 
 
 
