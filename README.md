@@ -34,7 +34,7 @@ Revisión de entregables por parte del profesorado.
 
 3. Prototipo de baja fidelidad (boceto).
 
-4. Prototipo de alta fidelidad y guía de estilo (pentpot).
+4. Prototipo de alta fidelidad y guía de estilo (penpot).
 
 5. HTML y recursos (imágenes y css) en un repositorio github personal.
 
