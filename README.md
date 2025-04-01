@@ -2,7 +2,7 @@
 
 ## Situación profesional
 
-Crear desde cero una web-cartelera tipo `netflix` para ver una lista películas calasificadas, y sus detalles básicos: título, descripción y cartel.
+Crear desde cero una web-cartelera tipo `Netflix` para ver una lista películas calasificadas, y sus detalles básicos: título, descripción y cartel.
 
 ## Profesión:
 
@@ -11,7 +11,8 @@ Desarollador Frontend.
 ## Competencias
 
 Crear una interfaz de usuario web estática y adaptable.
-Consumir una API de terceros.
+'Consumir' una API de terceros.
+Javascript asíncrono.
 
 ## Necesidad
 
@@ -27,7 +28,7 @@ Revisión de entregables por parte del profesorado.
 
 ## Entregables
 
-1. Investigación: API propuesta + como hacer llamadas a APIs propias + Llamadas a APIs de terceros (JSONP).
+1. Investigación: API propuesta `themoviedb.org` + como hacer llamadas a APIs en javascript (fetch).
 
 2. Historias de usuario que contemplan los requisitos de la actividad.
 
@@ -84,7 +85,9 @@ Proponer una solución que permita:
 
 
 ## Bolas extra
-Atención equipos!! El cliente ha ampliado lo que quiere ver en cada proyecto.
+
+### Investigación Same-Origin Policy
+  Ploíticas de seguridad de los navegadores y como hacer llamadas a sitios de terceros (CORS).
 
 ### Búsqueda de películas
   Incluir una página de búsqueda, para que los usuarios puedan buscar por títulos.
