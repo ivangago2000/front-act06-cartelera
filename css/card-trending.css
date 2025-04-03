@@ -1,0 +1,151 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+
+}
+
+.card-trending {
+    background-image: url('https://im.ziffdavisinternational.com/ign_es/screenshot/default/avatar_6fyc.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 6px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
+    width: 340px;
+    height: 446px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative; /* Necesario para que el pseudo-elemento se posicione correctamente */
+    overflow: hidden; /* Asegura que el pseudo-elemento no se salga del borde redondeado */
+    padding: 16px;
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+    box-sizing: border-box;
+
+    .img-trending-oculta {
+        display: none; /* Oculta la imagen de fondo */
+    }
+
+    .titulo-valoracion-trending, .description-trending, .btn-princ {
+        display: none;
+        opacity: 0; /* Totalmente transparente */
+        transition: opacity 0.3s ease-out, transform 0.3s ease-out; /* Suaviza la animación */
+    }
+    
+}
+
+.card-trending::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 6px;
+    z-index: 1;
+    opacity: 0; /* Oculto por defecto */
+    transition: opacity 0.3s ease-out; /* Suaviza la aparición */
+}
+
+.card-trending:hover {
+    z-index: 2; /* Asegura que el contenedor esté por encima del fondo */
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.3); /* Aumenta la sombra */
+    
+
+    .titulo-valoracion-trending, .description-trending {
+        color: white;
+        z-index: 2; /* Asegura que el texto esté por encima del pseudo-elemento */
+    }
+
+    .titulo-valoracion-trending {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 16px;
+        opacity: 1; /* Totalmente visible */
+    }
+
+    .titulo-trending {
+        font-size: 24px;
+    }
+
+    .valoracion-trending {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 8px;
+        
+        p {
+            font-weight: bold;
+        }
+
+        .fa-star {
+            color: rgb(255, 174, 0);
+        }
+    }
+
+    .description-trending {
+        display: flex;
+        margin-bottom: 16px;
+        opacity: 1; /* Totalmente visible */
+    }
+
+    .btn-princ {
+        z-index: 2;
+        display: block;
+        opacity: 1; /* Totalmente visible */
+    }
+
+}
+
+.card-trending:hover::before {
+    content: ''; /* Necesario para que el pseudo-elemento se renderice */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 6px; /* Coincide con el borde del contenedor */
+    z-index: 1; /* Asegura que la capa esté por encima del fondo */
+    opacity: 1;
+}
+
+
+
+@media screen and (max-width: 460px) {
+    .card-trending:active {
+        z-index: 2; /* Asegura que el contenedor esté por encima del fondo */
+        box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.3); /* Aumenta la sombra */
+    
+        .titulo-valoracion-trending, .description-trending {
+        color: white;
+        z-index: 2; /* Asegura que el texto esté por encima del pseudo-elemento */
+        }
+    
+        .titulo-valoracion-trending {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-bottom: 16px;
+            opacity: 1; /* Totalmente visible */
+        }
+    
+        .description-trending {
+            display: flex;
+            margin-bottom: 16px;
+            opacity: 1; /* Totalmente visible */
+        }
+    
+        .btn-princ {
+            z-index: 2;
+            display: block;
+            opacity: 1; /* Totalmente visible */
+        }
+    }
+
+    .card-trending:active::before {
+        opacity: 1; /* Muestra el pseudo-elemento */
+    }
+
+}
