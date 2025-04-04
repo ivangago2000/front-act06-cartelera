@@ -53,9 +53,20 @@
     box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.3); /* Aumenta la sombra */
     
 
-    .titulo-valoracion-trending, .description-trending {
+    .titulo-valoracion-trending, .description-trending, .numero-trending {
         color: white;
         z-index: 2; /* Asegura que el texto esté por encima del pseudo-elemento */
+    }
+
+    .numero-trending {
+        position: absolute;
+        top:8px;
+        left: 8px;
+        background-color: white;
+        color: black;
+        border-radius: 8px;
+        padding: 8px 16px;
+        font-weight: bold;
     }
 
     .titulo-valoracion-trending {
