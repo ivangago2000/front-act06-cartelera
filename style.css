@@ -8,6 +8,8 @@ body {
     background-color: #f5f5f5; /* Color de fondo opcional */
 }
 
+
+
 /* Header: logo a la izquierda y búsqueda a la derecha */
 header {   
     height: 140px; /* Alto fijo de 140px */
@@ -16,7 +18,8 @@ header {
     align-items: center; /* Centra verticalmente */
     padding: 20px;
     background-color: #fff; /* Fondo blanco para el header */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra opcional */
+   border-bottom: 4px solid rgba(0, 0, 0, 0.1); /* Línea inferior */
+    z-index: 0;  
 }
 
 .logo img {
@@ -64,8 +67,93 @@ footer {
     padding: 20px;
     text-align: center;
     background-color: #333;
-    color: white;
+    color: white;  
+    background-color: #EBC8C8;  
 }
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-enlaces-legales {
+    flex: 1;
+    min-width: 250px;
+    padding: 0 15px;
+  
+    h3 {
+        color: #D81920;
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+            margin-bottom: 10px;
+        }
+        
+    }
+
+    a {
+        color: #000000;
+        text-decoration: none;
+        transition: color 0.3s;
+        
+    }
+
+    a:hover {
+        color: #D81920;
+    }
+   
+}
+
+.footer-redes-sociales {
+    color: #D81920;
+}
+
+.footer-logo {
+    width: 150px; /* Ajusta el tamaño deseado */
+    margin-bottom: 15px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+
+    a {
+        color: #070707;
+        font-size: 2.5rem;
+        transition: color 0.3s;
+    }
+
+    a:hover {
+        color: #D81920;
+    }
+}
+
+.footer-bottom {
+    color: #070707;
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid #ffffff;
+    margin-top: 30px;
+
+    i {
+        color: #e74c3c;
+    }
+}
+
+.social-icons {
+    justify-content: center;
+}
+
 
 /* Responsive: Móvil (< 768px) */
 /* ------------------------- */
@@ -88,4 +176,5 @@ footer {
     .search-box input {
         width: 90%; /* Input más ancho en móvil */
     }
+            
 }
