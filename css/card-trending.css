@@ -159,12 +159,15 @@
         }
     
         .description-trending {
-            display: flex;
+            margin-bottom: 16px;
+            color: white;
+            display: -webkit-box; /* Necesario para que funcione -webkit-line-clamp */
+            -webkit-line-clamp: 5; /* Limita el texto a 3 líneas */
+            -webkit-box-orient: vertical; /* Orienta el contenido en vertical */
             margin-bottom: 16px;
             opacity: 1; /* Totalmente visible */
-            color: white;
             overflow: hidden;
-
+            word-wrap: break-word; /* Romper palabras si es necesario */
             text-overflow: ellipsis; /* Si hay demasiado texto, se muestra con "..." */
             max-height: 180px;
             text-align: left;
