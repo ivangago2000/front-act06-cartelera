@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
             history.pushState({ page: "politica" }, "", "#politica");
 
             // Cargar el contenido de la política de seguridad
-            fetch('Politica de Seguridad.html') // Asegúrate de que la ruta sea correcta
+            fetch('../html/Politica de Seguridad.html') // Asegúrate de que la ruta sea correcta
                 .then(response => response.text())
                 .then(data => {
                     mainContent.innerHTML = data; // Inserta el contenido dinámicamente
