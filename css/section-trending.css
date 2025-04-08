@@ -1,0 +1,29 @@
+.section-trending {
+    background-color: #EBC8C8;
+    padding: 60px 0;
+}
+
+.section-trending-title {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    
+}
+
+.section-cards-trending {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 40px;
+}
+
+
+@media screen and (max-width: 460px) {
+    .section-cards-trending {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+}
