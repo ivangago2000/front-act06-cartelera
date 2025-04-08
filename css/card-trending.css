@@ -97,18 +97,16 @@
     }
 
     .description-trending {
-        display: flex;
+        display: -webkit-box; /* Necesario para que funcione -webkit-line-clamp */
+        -webkit-line-clamp: 5; /* Limita el texto a 3 líneas */
+        -webkit-box-orient: vertical; /* Orienta el contenido en vertical */
         margin-bottom: 16px;
         opacity: 1; /* Totalmente visible */
         overflow: hidden;
-        word-wrap: break-word; / Romper palabras si es necesario /
-        text-overflow: ellipsis; / Si hay demasiado texto, se muestra con "..." */
+        word-wrap: break-word; /* Romper palabras si es necesario */
+        text-overflow: ellipsis; /* Si hay demasiado texto, se muestra con "..." */
         max-height: 180px;
         text-align: left;
-
-        display: -webkit-box;
-        -webkit-line-clamp: 10;
-        -webkit-box-orient: vertical;    
     }
 
     .btn-princ {
@@ -140,7 +138,7 @@
     }
     
     .card-trending.active {
-        overflow: auto;
+        overflow: hidden;
         z-index: 2; /* Asegura que el contenedor esté por encima del fondo */
         box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.3); /* Aumenta la sombra */
     
@@ -167,13 +165,9 @@
             color: white;
             overflow: hidden;
 
-            text-overflow: ellipsis; / Si hay demasiado texto, se muestra con "..." */
+            text-overflow: ellipsis; /* Si hay demasiado texto, se muestra con "..." */
             max-height: 180px;
             text-align: left;
-
-            display: -webkit-box;
-            -webkit-line-clamp: 10;
-            -webkit-box-orient: vertical; 
         }
     
         .btn-princ {
