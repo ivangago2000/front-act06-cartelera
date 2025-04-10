@@ -1,0 +1,433 @@
+/* Estilos Generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #eae6e5;
+    color: black;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos de la categoría */
+.categoria {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 70px;
+    margin-bottom: 60px;
+}
+
+.pelicula::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 6px;
+    z-index: 1;
+    opacity: 0; /* Oculto por defecto */
+    transition: opacity 0.3s ease-out; /* Suaviza la aparición */
+}
+
+.pelicula:hover::before {
+    content: ''; /* Necesario para que el pseudo-elemento se renderice */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 6px; /* Coincide con el borde del contenedor */
+    z-index: 1; /* Asegura que la capa esté por encima del fondo */
+    opacity: 1;
+}
+
+/* Título de las categorías */
+h2 {
+    width: 520px;
+    height: auto;
+    font-size: 40px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    line-height: 48px;
+    color: #000;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: left;
+    margin-left: -640px;
+}
+
+/* Contenedor del carrusel */
+.carousel-wrapper {
+    position: relative;
+    width: 75%;
+    max-width: 968px; /* 4 películas: (202px * 4) + (40px * 3) */
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+/* Contenedor de las películas */
+.peliculas-contenedor {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 40px;
+    width: 100%;
+    overflow-x: hidden; /* Oculta el desplazamiento horizontal */
+    padding-bottom: 10px;
+    scroll-behavior: smooth; /* Desplazamiento suave */
+}
+
+/* Ocultar scrollbar en todos los navegadores */
+.peliculas-contenedor {
+    -ms-overflow-style: none; /* IE y Edge */
+    scrollbar-width: none; /* Firefox */
+}
+.peliculas-contenedor::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, y otros Webkit */
+}
+
+/* Estilos de las flechas modernas */
+.carousel-arrow {
+    background-color: #EBC8C8; /* Color base */
+    color: black; /* Color del texto cambiado a negro en estado normal */
+    border: none;
+    padding: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease(serverless), transform 0.3s ease;
+}
+
+.carousel-arrow.left {
+    left: -60px;
+}
+
+.carousel-arrow.right {
+    right: -60px;
+}
+
+.carousel-arrow:hover {
+    background-color: #D9A8A8; /* Tono más oscuro para hover */
+    color: white; /* Color del texto blanco al hacer hover */
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* Línea divisoria */
+.linea-divisoria {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 0px;
+    left: 0;
+    z-index: -1;
+}
+
+/* Espacio entre categorías */
+.categoria + .categoria {
+    margin-top: -50px;
+}
+
+/* Contenedor de la película */
+.pelicula {
+    flex: 0 0 202px; /* Ancho fijo */
+    height: 340px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #1e1e1e;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.25);
+    padding: 20px;
+    color: #FFF;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Checkbox hack */
+.toggle-details {
+    display: none;
+}
+
+.pelicula-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    z-index: 2; /* Encima del fondo, debajo del botón */
+}
+
+/* Contenedor del contenido */
+.contenido {
+    display: flex;
+    justify-content: space-between; /* Title left, rating right */
+    align-items: center; /* Vertically center both title and rating */
+    width: 100%;
+    height: 100px;
+    background: transparent;
+    position: relative;
+    z-index: 1;
+
+    margin-bottom: 10px;
+}
+
+/* Estilo del título */
+.titulo {
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28px;
+    margin: 0;
+    color: #FFF;
+    text-align: left; /* Align title to the left */
+    flex: 1; /* Allow title to take available space */
+    margin-right: 10px; /* Space between title and rating */
+
+    margin-top: 1px;
+}
+
+/* Contenedor de la valoración */
+.valoracion {
+    display: flex;
+    align-items: center; /* Center the star and score vertically within rating */
+    gap: 0px;
+    flex-shrink: 0; /* Prevent rating from shrinking */
+}
+
+/* Estilo del icono de la estrella */
+.fa-star {
+    color: rgb(255, 174, 0);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* Estilo de la puntuación */
+.puntuacion {
+    font-size: 18px;
+    font-weight: 500;
+    color: #FFF;
+    width: 40px;
+    text-align: right;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+
+    margin-left: 1px;
+}
+
+/* Descripción */
+.descripcion {
+    color: #FFF;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 18px;
+    margin: 10px 0 0 0;
+    overflow: hidden; /* Evita que el texto se desborde */
+    text-overflow: ellipsis; /* Agrega los tres puntos suspensivos */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 7; /* Número de líneas visibles antes de truncar */
+    max-height: 126px; /* Ajuste de altura para permitir 7 líneas (7 * line-height) */
+    text-align: left;
+    position: relative;
+    z-index: 1;
+
+    margin-top: 10px;
+
+    opacity: 1; /* Totalmente visible */
+}
+
+/* Botón */
+.btn-princ {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 100%;
+    margin: 0;
+    transition: opacity 0.3s ease;
+    position: relative;
+    z-index: 3; /* Encima de la etiqueta para que sea clickable */
+
+    margin-top: 10px;
+}
+
+.btn-princ:hover {
+    background-color: #0056b3;
+}
+
+/* Estado por defecto: ocultar contenido */
+.pelicula .contenido,
+.pelicula .descripcion,
+.pelicula .btn-princ {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Override within .categoria */
+.categoria h2 {
+    width: 100%;
+    max-width: 968px;
+    margin: 0 auto 20px auto;
+    font-size: 40px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    line-height: 48px;
+    color: #000;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: left;
+}
+
+/* Escritorio: mostrar al pasar el ratón */
+@media screen and (min-width: 769px) {
+    .pelicula:hover .contenido,
+    .pelicula:hover .descripcion,
+    .pelicula:hover .btn-princ {
+        opacity: 1;
+    }
+}
+
+/* Móvil: mostrar al hacer clic */
+@media screen and (max-width: 768px) {
+    .pelicula .contenido,
+    .pelicula .descripcion,
+    .pelicula .btn-princ {
+        opacity: 0;
+    }
+
+    .toggle-details:checked ~ .contenido,
+    .toggle-details:checked ~ .descripcion,
+    .toggle-details:checked ~ .btn-princ {
+        opacity: 1;
+    }
+
+    /* Añadir hover con click en móvil */
+    .pelicula:active::before {
+        opacity: 1; /* Muestra el overlay */
+    }
+
+    /* Desactivar hover en móvil */
+    .pelicula:hover .contenido,
+    .pelicula:hover .descripcion,
+    .pelicula:hover .btn-princ {
+        opacity: 0;
+    }
+
+    /* Estilos para las flechas en dispositivos móviles: Aparecen juntas debajo */
+    .carousel-wrapper {
+        position: relative;
+        display: flex;
+        justify-content: center; /* Centra las flechas */
+    }
+
+    .carousel-arrow.left,
+    .carousel-arrow.right {
+        position: static;
+        margin: 10px; /* Espaciado entre las flechas */
+    }
+}
+
+/* Responsive */
+@media screen and (max-width: 1024px) {
+    h2 {
+        font-size: 32px;
+        width: 80%;
+        margin-left: 0;
+        text-align: center;
+    }
+    .carousel-wrapper {
+        width: 85%;
+        max-width: 968px;
+    }
+    .carousel-arrow.left {
+        left: -50px;
+    }
+    .carousel-arrow.right {
+        right: -50px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    h2 {
+        font-size: 28px;
+        width: 90%;
+        text-align: center;
+        margin-left: 0;
+    }
+    .categoria {
+        padding: 30px 20px;
+    }
+    .carousel-wrapper {
+        width: 90%;
+        max-width: 968px;
+    }
+    .carousel-arrow.left {
+        left: -40px;
+    }
+    .carousel-arrow.right {
+        right: -40px;
+    }
+    .pelicula {
+        flex: 0 0 250px;
+        height: 360px;
+    }
+    /* Aquí se asegura que las películas no se salten al hacer scroll */
+    .peliculas-contenedor {
+        scroll-behavior: smooth; /* Asegura desplazamiento suave */
+    }
+    .carousel-wrapper {
+        overflow-x: auto;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h2 {
+        font-size: 24px;
+        padding: 5px;
+        text-align: center;
+    }
+    .categoria {
+        padding: 20px 10px;
+    }
+    .carousel-wrapper {
+        width: 100%;
+        max-width: 968px;
+    }
+    .carousel-arrow.left {
+        left: -30px;
+    }
+    .carousel-arrow.right {
+        right: -30px;
+    }
+    .pelicula {
+        flex: 0 0 200px;
+        height: 320px;
+    }
+    .descripcion {
+        font-size: 12px;
+        line-height: 16px;
+        max-height: 100px;
+        -webkit-line-clamp: 5; /* Reducir número de líneas visibles */
+    }
+}
+
