@@ -4,24 +4,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NetCoders</title>
-
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../css/btn-princ.css">
+    <link rel="stylesheet" href="../css/section-trending.css">
+    <link rel="stylesheet" href="../css/cardGenero.css">
+    <link rel="stylesheet" href="../css/card-trending.css">
+    <script src="../js/cardGenero.js"></script>
+    <script src="../js/section-trending.js"></script>
+    <script src="../js/card-trending.js"></script>
+    
 </head>
 <body>
-
-
     <header>
-
+        <!-- Contenido del header -->
     </header>
 
-
     <main>
+        <!-- Sección Trending -->
+        <section class="section-trending">
+            <section class="section-trending-title">
+                <h2 class="titulo-section-trending">Trending</h2>
+                <section class="section-cards-trending">
+                    <!-- Aquí se agregarán dinámicamente las tarjetas de películas trending -->
+                </section>
+            </section>
+        </section>
 
+        <!-- Sección Card Género -->
+        <section class="categoria fantasia">
+            <h2>Fantasía</h2>
+            <div class="carousel-wrapper">
+                <button class="carousel-arrow left" data-container="fantasia-container">‹</button>
+                <div class="peliculas-contenedor" id="fantasia-container">
+                    <!-- Aquí se cargarán las películas de fantasía dinámicamente -->
+                </div>
+                <button class="carousel-arrow right" data-container="fantasia-container">›</button>
+            </div>
+            <div class="linea-divisoria">
+                <svg width="1440" height="2" viewBox="0 0 1440 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 2H1440" stroke="black" stroke-opacity="0.1" stroke-width="4"/>
+                </svg>
+            </div>
+        </section>
+
+        <section class="categoria terror">
+            <h2>Terror</h2>
+            <div class="carousel-wrapper">
+                <button class="carousel-arrow left" data-container="terror-container">‹</button>
+                <div class="peliculas-contenedor" id="terror-container">
+                    <!-- Aquí se cargarán las películas de terror dinámicamente -->
+                </div>
+                <button class="carousel-arrow right" data-container="terror-container">›</button>
+            </div>
+            <div class="linea-divisoria">
+                <svg width="1440" height="2" viewBox="0 0 1440 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 2H1440" stroke="black" stroke-opacity="0.1" stroke-width="4"/>
+                </svg>
+            </div>
+        </section>
+
+        <section class="categoria comedia">
+            <h2>Comedia</h2>
+            <div class="carousel-wrapper">
+                <button class="carousel-arrow left" data-container="comedia-container">‹</button>
+                <div class="peliculas-contenedor" id="comedia-container">
+                    <!-- Aquí se cargarán las películas de comedia dinámicamente -->
+                </div>
+                <button class="carousel-arrow right" data-container="comedia-container">›</button>
+            </div>
+        </section>
     </main>
 
     <footer>
-        
+        <!-- Contenido del footer -->
     </footer>
+
     
 </body>
 </html>
