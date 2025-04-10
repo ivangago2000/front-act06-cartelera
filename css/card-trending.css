@@ -4,6 +4,8 @@
 
 }
 
+
+
 .card-trending {
     background-image: url('https://im.ziffdavisinternational.com/ign_es/screenshot/default/avatar_6fyc.jpg');
     background-size: cover;
@@ -43,9 +45,7 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 6px;
-    z-index: 1;
-    opacity: 0; /* Oculto por defecto */
-    transition: opacity 0.3s ease-out; /* Suaviza la aparición */
+    z-index: 1; /* El pseudo-elemento debe estar detrás del contenido */
 }
 
 .card-trending:hover {
@@ -78,7 +78,8 @@
     }
 
     .titulo-trending {
-        font-size: 24px;
+        position: relative; /* Necesario para que el z-index funcione */
+    z-index: 2; /* Asegúrate de que esté por encima del pseudo-elemento */
     }
 
     .valoracion-trending {
@@ -129,6 +130,8 @@
     z-index: 1; /* Asegura que la capa esté por encima del fondo */
     opacity: 1;
 }
+
+
 
 
 

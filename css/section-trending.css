@@ -1,6 +1,7 @@
 .section-trending {
     background-color: #EBC8C8;
     padding: 60px 0;
+    position: relative; /* Asegura que los elementos hijos puedan usar z-index */
 }
 
 .section-trending-title {
@@ -8,8 +9,22 @@
     margin: auto;
     display: flex;
     flex-direction: column;
+    align-items: center; /* Centra horizontalmente el contenido */
+    justify-content: center; /* Centra verticalmente el contenido */
     gap: 16px;
-    
+    position: relative; /* Asegura que el título pueda usar z-index */
+    height: 100%; /* Asegúrate de que ocupe todo el espacio necesario */
+}
+
+.titulo-section-trending {
+    font-size: 40px;
+    color: black; /* Asegúrate de que el color sea visible */
+    text-align: left;
+    margin-bottom: 16px;
+    z-index: 10; /* Asegura que esté por encima de otros elementos */
+    position: relative; /* Necesario para que el z-index funcione */
+    font-weight: bold;
+    padding-left: 80px;
 }
 
 .section-cards-trending {
@@ -18,6 +33,8 @@
     justify-content: center;
     gap: 40px;
 }
+
+
 
 
 @media screen and (max-width: 460px) {

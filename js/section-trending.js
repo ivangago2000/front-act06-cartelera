@@ -81,5 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .catch(err => console.error('Error al obtener el tráiler:', err));
     }
 
+    
+
 });
 
