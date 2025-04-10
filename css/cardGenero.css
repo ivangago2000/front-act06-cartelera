@@ -18,6 +18,10 @@ body {
     margin-bottom: 60px;
 }
 
+.pelicula {
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out; /* Suaviza la animación */
+}
+
 .pelicula::before {
     content: '';
     position: absolute;
