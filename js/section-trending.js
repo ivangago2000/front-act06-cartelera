@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <p class="numero-trending">#${index + 1}</p>
                     <img class="img-trending-oculta" src="https://im.ziffdavisinternational.com/ign_es/screenshot/default/avatar_6fyc.jpg" alt="cartel de la película ${movie.title}">
                     <section class="titulo-valoracion-trending">
-                        <h2 class="titulo-trending">${movie.title}</h2>
+                        <h3 class="titulo-trending">${movie.title}</h3>
                         <section class="valoracion-trending">
                             <i class="fa-solid fa-star"></i>
                             <p>${movie.vote_average.toFixed(1)}</p>
