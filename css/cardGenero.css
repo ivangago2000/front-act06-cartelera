@@ -18,10 +18,6 @@ body {
     margin-bottom: 60px;
 }
 
-.pelicula {
-    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out; /* Suaviza la animación */
-}
-
 .pelicula::before {
     content: '';
     position: absolute;
@@ -162,6 +158,7 @@ h2 {
     color: #FFF;
     overflow: hidden;
     position: relative;
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out; /* Suaviza la animación */
 }
 
 /* Checkbox hack */
@@ -219,7 +216,6 @@ h2 {
 /* Estilo del icono de la estrella */
 .fa-star {
     color: rgb(255, 174, 0);
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
 }
 
 /* Estilo de la puntuación */
@@ -229,7 +225,6 @@ h2 {
     color: #FFF;
     width: 40px;
     text-align: right;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
 
     margin-left: 1px;
 }
