@@ -155,6 +155,77 @@ footer {
 }
 
 
+
+.pelicula {
+    border: 2px solid #f8c5da;
+    background-color: #EBC8C8;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    margin: 10px;
+    border-radius: 12px;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .pelicula:hover {
+    transform: scale(1.02);
+  }
+  
+  .pelicula-content {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+  
+  .pelicula-imagen {
+    flex: 0 0 200px;
+    max-width: 200px;
+  }
+  
+  .pelicula-imagen img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  .pelicula-info {
+    flex: 1;
+    min-width: 250px;
+  }
+
+
+  .btn-princ {
+    width: 15%;
+    height: 40px;
+    background-color: #0E67B9;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+}
+
+.btn-princ:hover {
+    background-color: #083A69;
+}
+
+.btn-princ:disabled {
+    background-color: #A5AFB9;
+}
+
+.btn-princ:active {
+    background-color: #0E67B9;
+    border: 3px solid #083A69;
+}
+
+.btn-princ:focus {
+    background-color: #0E67B9;
+    border: 3px solid #083A69;
+}
+
+
+
+  
+  
+
 /* Responsive: Móvil (< 768px) */
 /* ------------------------- */
 @media (max-width: 768px) {
@@ -176,5 +247,14 @@ footer {
     .search-box input {
         width: 90%; /* Input más ancho en móvil */
     }
-            
+         
+    .pelicula-content {
+        flex-direction: column;
+        align-items: center;
+      }
+    
+      .pelicula-info {
+        text-align: center;
+      }
+    }
 }

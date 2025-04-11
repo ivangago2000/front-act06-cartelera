@@ -6,14 +6,6 @@ window.addEventListener("DOMContentLoaded", () => {
   const botonBuscar = document.getElementById("boton-buscar");
   const contenedor = document.getElementById("main-content");
 
-  // Redirigir al inicio cuando el usuario presiona el botón de retroceso
-  window.addEventListener("popstate", () => {
-    if (window.location.pathname !== "/index.html") { // Verifica que no estemos en el inicio
-      window.location.href = "index.html";  // Redirige al inicio
-    }
-  });
-
-  // Si es la primera vez que se busca algo, añadimos un estado al historial
   async function ejecutarBusqueda() {
     const query = buscador.value.trim();
 
@@ -23,7 +15,7 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 
     try {
-      const response = await fetch(`${API_URL}?query=${encodeURIComponent(query)}`, {
+      const response = await fetch(`${API_URL}?query=${encodeURIComponent(query)}&language=es-ES`, {
         headers: {
           Authorization: `Bearer ${TOKEN}`,
           "Content-Type": "application/json;charset=utf-8"
@@ -32,19 +24,14 @@ window.addEventListener("DOMContentLoaded", () => {
 
       const data = await response.json();
       mostrarPeliculas(data.results, contenedor);
-
-      // Al realizar la búsqueda, añadir un estado al historial
       history.pushState({ search: query }, '', `?search=${query}`);
-
     } catch (error) {
       console.error("Error al buscar películas:", error);
+      alert("Error al realizar la búsqueda.");
     }
   }
 
-  // Clic en el botón de búsqueda
   botonBuscar.addEventListener("click", ejecutarBusqueda);
-
-  // Presionar Enter en el input también realiza la búsqueda
   buscador.addEventListener("keydown", (e) => {
     if (e.key === "Enter") {
       ejecutarBusqueda();
@@ -64,12 +51,45 @@ function mostrarPeliculas(peliculas, contenedor) {
     const div = document.createElement("div");
     div.className = "pelicula";
     div.innerHTML = `
-      <h3>${peli.title}</h3>
-      <p>Fecha de estreno: ${peli.release_date || "Desconocida"}</p>
-      ${peli.poster_path ? `<img src="https://image.tmdb.org/t/p/w200${peli.poster_path}" alt="${peli.title}"/>` : ""}
-      <p>${peli.overview || "Sin descripción disponible."}</p>
-      <hr/>
+      <div class="pelicula-content">
+        <div class="pelicula-imagen">
+          ${peli.poster_path ? `<img src="https://image.tmdb.org/t/p/w300${peli.poster_path}" alt="${peli.title}"/>` : ""}
+        </div>
+        <div class="pelicula-info">
+          <h3>${peli.title}</h3>
+          <p><strong>Fecha de estreno:</strong> ${peli.release_date || "Desconocida"}</p>
+          <p>${peli.overview || "Sin descripción disponible."}</p>
+          <button class="btn-princ" onclick="mostrarTrailer(${peli.id})">
+            Ver trailer
+          </button>
+        </div>
+      </div>
     `;
     contenedor.appendChild(div);
   });
+}
+
+async function mostrarTrailer(movieId) {
+  try {
+    const response = await fetch(`https://api.themoviedb.org/3/movie/${movieId}/videos?language=es-US`, {
+      headers: {
+        accept: 'application/json',
+        Authorization: `Bearer ${TOKEN}`
+      }
+    });
+    const data = await response.json();
+
+    const trailer = data.results.find(video => video.type === "Trailer" && video.site === "YouTube");
+
+    if (trailer) {
+      const youtubeUrl = `https://www.youtube.com/watch?v=${trailer.key}`;
+      window.open(youtubeUrl, "_blank");
+    } else {
+      alert("Trailer no disponible.");
+    }
+
+  } catch (err) {
+    console.error("Error al obtener el trailer:", err);
+    alert("No se pudo cargar el trailer.");
+  }
 }
