@@ -1,0 +1,276 @@
+/* Reset básico y estilos generales */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    margin: 0 auto; /* Centrar el body en pantallas grandes */
+    background-color: #f5f5f5; /* Color de fondo opcional */
+}
+
+
+
+/* Header: logo a la izquierda y búsqueda a la derecha */
+header {   
+    height: 140px; /* Alto fijo de 140px */
+    display: flex;
+    justify-content: space-between; /* Separa los elementos a los extremos */
+    align-items: center; /* Centra verticalmente */
+    padding: 20px;
+    background-color: #fff; /* Fondo blanco para el header */
+    border-bottom: 4px solid rgba(0, 0, 0, 0.1); /* Línea inferior */
+    z-index: 0;  
+    width: 100%; /* Asegura que el header ocupe todo el ancho */z
+}
+
+.logo img {
+    height: 50px; /* Ajusta la altura del logo */
+    width: auto; /* Mantiene la proporción del logo */
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    overflow: hidden; /* Para que el botón no sobresalga */
+    background-color: white;
+    margin-right: 40px; /* Espacio a la derecha del buscador */
+}
+
+.search-box input {
+    padding: 10px 15px;
+    border: none;
+    outline: none;
+    width: 226px; /* Ajusta el ancho */
+}
+
+.search-box button {
+    border: none;
+    background: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    color: #555;
+}
+
+.search-box button img {
+    width: 25px; /* Ajusta el tamaño */
+    height: 25px;
+}
+
+
+/* Footer (puedes personalizarlo) */
+footer {
+    padding: 20px;
+    text-align: center;
+    background-color: #333;
+    color: white;  
+    background-color: #EBC8C8;  
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    margin-bottom: 20px;
+
+    .titulos-footer {
+        margin-bottom: 8px;
+    }
+}
+
+.footer-enlaces-legales {
+    flex: 1;
+    min-width: 250px;
+    padding: 0 15px;
+    margin-bottom: 32px;
+  
+    h3 {
+        color: #D81920;
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+            margin-bottom: 10px;
+        }
+        
+    }
+
+    a {
+        color: #000000;
+        text-decoration: none;
+        transition: color 0.3s;
+        
+    }
+
+    a:hover {
+        color: #D81920;
+    }
+   
+}
+
+.footer-redes-sociales {
+    color: #D81920;
+}
+
+.footer-logo {
+    width: 150px; /* Ajusta el tamaño deseado */
+    margin-bottom: 15px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+
+    a {
+        color: #070707;
+        font-size: 2.5rem;
+        transition: color 0.3s;
+    }
+
+    a:hover {
+        color: #D81920;
+    }
+}
+
+.footer-bottom {
+    color: #070707;
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid #ffffff;
+    margin-top: 30px;
+
+    i {
+        color: #e74c3c;
+    }
+}
+
+.social-icons {
+    justify-content: center;
+}
+
+
+
+.pelicula-buscador {
+    border: 2px solid #f8c5da;
+    background-color: #EBC8C8;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    margin: 10px;
+    border-radius: 12px;
+    transition: transform 0.2s ease-in-out;
+
+     .btn-princ {
+        width: 15%;
+     }
+  }
+  
+  .pelicula-buscador:hover {
+    transform: scale(1.02);
+  }
+  
+  .pelicula-content {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+  
+  .pelicula-imagen {
+    flex: 0 0 200px;
+    max-width: 200px;
+  }
+  
+  .pelicula-imagen img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  .pelicula-info {
+    flex: 1;
+    min-width: 250px;
+  }
+
+
+
+
+.btn-princ:hover {
+    background-color: #083A69;
+}
+
+.btn-princ:disabled {
+    background-color: #A5AFB9;
+}
+
+.btn-princ:active {
+    background-color: #0E67B9;
+    border: 3px solid #083A69;
+}
+
+.btn-princ:focus {
+    background-color: #0E67B9;
+    border: 3px solid #083A69;
+}
+
+.politica {
+    max-width: 1440px;
+    margin: 0 auto;
+
+    h2 {
+        display: none;
+    }
+}
+
+
+
+  
+  
+
+/* Responsive: Móvil (< 768px) */
+/* ------------------------- */
+@media (max-width: 768px) {
+    header {
+        height: auto; /* Altura flexible */
+        flex-direction: column; /* Cambia a columna */
+        padding: 20px;
+        gap: 20px; /* Espacio entre logo y buscador */
+        justify-content: center;
+        align-items: center;
+    }
+
+    .logo {
+        margin-bottom: 10px; /* Espacio adicional debajo del logo */
+    }
+
+    .search-box {
+        width: 60%; /* Ocupa todo el ancho */
+        margin-right: 0;
+    }
+
+    .search-box input {
+        width: 90%; /* Input más ancho en móvil */
+    }
+         
+    .pelicula-content {
+        flex-direction: column;
+        align-items: center;
+      }
+    
+      .pelicula-info {
+        text-align: center;
+      }
+
+      .pelicula-buscador {
+        .btn-princ {
+            width: 100%;
+         }
+      }
+    }
+}
